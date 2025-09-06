@@ -451,3 +451,22 @@ html[data-theme="light"] {
     padding-right: 2rem;
   }
 }
+/* --- Spacing override: ge luft vid kanterna --- */
+.container {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+/* Footer kan få lite extra luft om du vill */
+.site-footer .container,
+footer .container {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
