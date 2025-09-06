@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="sv" data-theme="system">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nordic Property Group AB — Fastigheter</title>
+  <meta name="description" content="Nordic Property Group AB — Nordisk fastighetskompetens: förvärv, förvaltning och utveckling." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Nordic Property Group AB startsida">
+        <img src="NPAB.png" alt="Nordic Property Group AB logotyp" style="height:90px;">
+      </a>
+      <div class="menu" id="menu">
+        <a href="index.html">Hem</a>
+        <a href="assignments.html">Aktuella uppdrag</a>
+        <a href="about.html">Om oss</a>
+      </div>
+      <div class="nav-actions">
+        <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Öppna meny">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <!-- HERO -->
+<header class="hero hero-bg" style="--hero-img: url('fastighet.png');">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="container hero-inner reveal">
+    <div class="hero-card">
+      <h1>Vi utvecklar och förvaltar fastigheter<br><span class="muted">med fokus på värde & långsiktighet.</span></h1>
+      <p>Nordic Property Group AB — erfarenhet från hela Norden inom förvärv, förvaltning och uthyrning.</p>
+      <div class="cta">
+        <a class="btn primary" href="assignments.html">Se uppdrag</a>
+        <a class="btn" href="about.html#kontaktform">Få en kostnadsfri offert</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+  <!-- WHY US -->
+  <section class="section">
+    <div class="container">
+      <h2>Varför välja oss?</h2>
+      <div class="grid cards" style="margin-top:1rem">
+        <article class="card">
+          <h3>Erfarenhet</h3>
+          <p>Nordic Property Group består av ett team med lång erfarenhet från fastighetsbranchen.</p>
+        </article>
+        <article class="card">
+          <h3>Gratis konsultation</h3>
+          <p>Är du osäker eller vill diskutera ett upplägg med oss så dra er inte för att kontakta oss. Vi är vana vid att ta fram förslag till samarbete.</p>
+        </article>
+        <article class="card">
+          <h3>Utmärkt service</h3>
+          <p>Våra kunder är återkommande och vi vet varför! Vi är ett personligt konsulthus med engagerade medarbetare. Vi gör det där lilla extra för dig som kund!</p>
+        </article>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / Nöjda kunder -->
+  <section class="section" aria-labelledby="testi-title">
+    <div class="container">
+      <h2 id="testi-title">Nöjda kunder</h2>
+      <div class="grid testis" style="margin-top:1rem">
+        <figure class="quote">
+          <p>“Nordic Property Group har ett stort nätverk bland etablerare vilket snabbt gav resultat i deras uthyrningsuppdrag hos oss. Vi fick även hjälp med omflyttningar inom centrumet.”</p>
+          <figcaption>— <strong>Christian Severin</strong>, CBRE‑IM</figcaption>
+        </figure>
+        <figure class="quote">
+          <p>“Anders med sitt team har under många år varit en del av gallerians framgångar. Han har med stor yrkesskicklighet säkerställt att centrumet utvecklas och att rätt hyresgästmix är på plats.”</p>
+          <figcaption>— <strong>Paul Bertilzon</strong>, Majejeb AB</figcaption>
+        </figure>
+        <figure class="quote">
+          <p>“Vi har med stor framgång hyrt in en konsult från Nordic Property Group till Triangelns köpcentrum. De har en gedigen erfarenhet av kommersiell utveckling och uthyrning och bidrar med många år av erfarenhet.”</p>
+          <figcaption>— <strong>Eric Sjöstedt</strong>, Vasakronan</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</section>
+
+<footer>
+  <div class="container" style="padding:1rem 0; border-top:1px solid var(--border);">
+    <h2 style="text-align:center; font-size:1rem; font-weight:600; margin-bottom:.3rem;">
+      Nordic Property Group AB
+    </h2>
+    <div style="display:grid; grid-template-columns:auto auto; justify-content:space-between; gap:.5rem;">
+      <!-- Vänster kolumn -->
+      <div style="text-align:left; line-height:1.4; font-size:.9rem;">
+        <div><a href="mailto:info@nordicpropertygroup.com">info@nordicpropertygroup.com</a></div>
+        <div><a href="tel:+46769495241">+46 76 949 52 41</a></div>
+      </div>
+      <!-- Höger kolumn -->
+      <div style="text-align:right; line-height:1.4; font-size:.9rem;">
+        <div>Kungstorpsvägen 8A</div>
+        <div>236 32 Höllviken</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:.3rem; font-size:.75rem; color:var(--muted);">
+      © <span id="year"></span> Nordic Property Group AB. Alla rättigheter förbehållna.
+    </div>
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
