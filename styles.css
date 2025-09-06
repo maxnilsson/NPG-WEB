@@ -518,3 +518,27 @@ footer .container {
 .burger.is-open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
+/* Visa burgaren på mobil */
+.burger {
+  display: flex;
+}
+
+/* Dölj på desktop */
+@media (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+}
+
+/* Större på mindre mobiler */
+@media (max-width: 600px) {
+  .burger {
+    width: 56px;
+    height: 56px;
+    gap: 7px;
+  }
+  .burger span {
+    width: 32px;
+    height: 3.5px;
+  }
+}
