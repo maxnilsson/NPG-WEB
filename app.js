@@ -104,3 +104,32 @@
   // (t.ex. om CSS hinner applicera desktop-läge). Kör igen efter nästa frame.
   requestAnimationFrame(handleResize);
 })();
+
+// --- Reveal on scroll för element med .reveal ---
+(function () {
+  const items = Array.from(document.querySelectorAll('.reveal'));
+  if (!items.length) return;
+
+  // Fallback: om IntersectionObserver saknas – visa allt direkt
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const onIntersect = (entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target); // behövs bara en gång per element
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(onIntersect, {
+    root: null,
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.1
+  });
+
+  items.forEach(el => observer.observe(el));
+})();
