@@ -438,3 +438,16 @@ html[data-theme="light"] {
 
 /* ===== Burgarknapp – liten X-animation när öppen (valfritt) ===== */
 .burger.is-open { outline: 2px solid color-mix(in hsl, var(--brand) 35%, transparent); }
+
+/* Ge luft på sidorna för all text */
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
