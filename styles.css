@@ -850,3 +850,48 @@ footer .container {
 @media (min-width: 900px) {
   .burger { display: none !important; }
 }
+
+
+/* --- BURGER: lagom stor och centrerat X --- */
+@media (max-width: 900px) {
+  .burger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    width: 64px !important;
+    height: 64px !important;
+    border: none;
+    background: transparent;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .burger span {
+    display: block;
+    width: 40px !important;   /* lite längre streck */
+    height: 4px !important;
+    background: #007BFF !important;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* --- X: justerad för att korsa mitt i knappen --- */
+  .burger.is-open span:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.is-open span:nth-child(3) {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+}
+
+/* Dölj på desktop (>=900px) */
+@media (min-width: 900px) {
+  .burger { display: none !important; }
+}
