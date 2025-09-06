@@ -602,3 +602,31 @@ footer .container {
     display: none;
   }
 }
+/* --- Burgaren större på små mobiler --- */
+@media (max-width: 600px) {
+  .burger {
+    width: 56px !important;
+    height: 56px !important;
+    gap: 7px !important;
+  }
+  .burger span {
+    width: 32px !important;
+    height: 3.5px !important;
+  }
+}
+
+/* Centrera hjälprutan vertikalt + horisontellt i hero */
+.hero {
+  position: relative;
+}
+
+.hero-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  max-width: var(--container, 1200px);
+  padding: 0 1rem;
+}
