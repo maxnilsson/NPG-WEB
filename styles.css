@@ -806,3 +806,47 @@ footer .container {
 @media (min-width: 900px) {
   .burger { display: none !important; }
 }
+
+
+/* --- BURGER: lagom stor på mobil (<900px) --- */
+@media (max-width: 900px) {
+  .burger {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px !important;         /* lite mindre avstånd */
+    width: 64px !important;      /* mindre yta än innan */
+    height: 64px !important;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .burger span {
+    display: block;
+    width: 36px !important;      /* kortare streck */
+    height: 4px !important;      /* tunnare */
+    background: #007BFF !important; /* blå */
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  /* --- Snyggare, jämnt X --- */
+  .burger.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Dölj på desktop (>=900px) */
+@media (min-width: 900px) {
+  .burger { display: none !important; }
+}
