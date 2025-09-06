@@ -481,3 +481,40 @@ footer .container {
     padding-right: 2rem;
   }
 }
+/* === Burgarknapp === */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;                 /* avstånd mellan strecken */
+  width: 48px;              /* större klick-yta */
+  height: 48px;
+  border: none;             /* ingen kant */
+  background: transparent;  /* transparent bakgrund */
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger:focus {
+  outline: none;            /* ingen blå kant när man trycker på iPhone */
+}
+
+.burger span {
+  display: block;
+  width: 28px;              /* längd på strecken */
+  height: 3px;              /* tjocklek */
+  background-color: var(--text, #2b2b2b);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* När knappen är öppen (via .is-open i JS) → gör ett snyggt X */
+.burger.is-open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.is-open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
