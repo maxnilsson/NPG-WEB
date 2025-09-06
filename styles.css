@@ -701,3 +701,66 @@ footer .container {
     transform: translateY(-15px) rotate(-45deg);
   }
 }
+
+/* --- BURGER: stor ikon på mobil, dold på desktop --- */
+@media (min-width: 900px) {
+  .burger { display: none !important; }
+}
+
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 72px !important;
+    height: 72px !important;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Viktigt: dessa två rader gör själva strecken större
+     och slår ut alla tidigare regler */
+  .burger span {
+    width: 44px !important;
+    height: 5px !important;
+    background: var(--text, #2b2b2b);
+    border-radius: 3px;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  /* X-animation justerad för större streck */
+  .burger.is-open span:nth-child(1) { transform: translateY(15px) rotate(45deg); }
+  .burger.is-open span:nth-child(2) { opacity: 0; }
+  .burger.is-open span:nth-child(3) { transform: translateY(-15px) rotate(-45deg); }
+}
+/* --- HERO: exakt centrerad på alla skärmar --- */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;                 /* centrerar hero-innehållet */
+  min-height: clamp(420px, 65vh, 760px);
+}
+
+.hero-inner {
+  display: grid;
+  justify-items: center;               /* centrerar innehållet horisontellt */
+  align-items: center;                 /* centrerar vertikalt */
+  width: 100%;
+  max-width: var(--container, 1200px);
+  margin: 0 auto;
+  text-align: center;
+  padding-inline: 24px;                /* lika mycket vänster/höger */
+}
+
+@media (max-width: 900px) {
+  .hero-inner { padding-inline: 16px; }
+}
+
+.hero-card {
+  margin: 0 auto;                      /* optisk centrering av själva boxen */
+}
