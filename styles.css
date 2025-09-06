@@ -764,3 +764,45 @@ footer .container {
 .hero-card {
   margin: 0 auto;                      /* optisk centrering av själva boxen */
 }
+
+/* --- BURGER STOR BLÅ PÅ MOBIL --- */
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 80px !important;     /* ännu större yta */
+    height: 80px !important;
+    border: none;
+    background: transparent;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .burger span {
+    width: 48px !important;     /* längre streck */
+    height: 6px !important;     /* tjockare streck */
+    background-color: #007BFF !important;  /* blå färg (Bootstrap blå) */
+    border-radius: 3px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* X-animation justerad för större streck */
+  .burger.is-open span:nth-child(1) {
+    transform: translateY(16px) rotate(45deg);
+  }
+  .burger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.is-open span:nth-child(3) {
+    transform: translateY(-16px) rotate(-45deg);
+  }
+}
+
+/* --- Dölj på desktop --- */
+@media (min-width: 900px) {
+  .burger { display: none !important; }
+}
