@@ -389,3 +389,58 @@ html[data-theme="light"] {
   --shadow:0 10px 30px rgba(0,0,0,.08);
   --container:1200px;
 }
+
+/* ===== Layout-fix: ge luft på mobil ===== */
+.container {
+  padding: 0 16px;  /* istället för 0 – gör att det inte blir ihoptryckt */
+}
+@media (min-width: 900px) {
+  .container { padding: 0 24px; }
+}
+
+/* ===== Loggans storlek responsivt ===== */
+.brand img {
+  height: 48px;          /* bra mobilhöjd */
+  width: auto;
+}
+@media (min-width: 900px) {
+  .brand img { height: 64px; }  /* lite större på desktop */
+}
+
+/* ===== Gör nav-wrap till positionerings-ankare ===== */
+.nav-wrap { position: relative; }
+
+/* ===== Burgarmeny som fälls NED under headern på mobil ===== */
+/* Grund: .menu är display:none hos dig <900px; vi stylar "öppen" variant */
+.menu.is-open {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  flex-direction: column;
+  gap: .25rem;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px 12px;
+  z-index: 50; /* över sidinnehållet */
+}
+
+/* Länkar i nedfälld meny */
+.menu.is-open a {
+  display: block;
+  padding: 12px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.menu.is-open a:active { opacity: .7; }
+.menu.is-open a:hover  { background: rgba(0,0,0,.05); }
+
+/* Hide burger på desktop, visa meny horisontellt (du har redan detta, men vi säkerställer) */
+@media (min-width: 900px) {
+  .menu { display: flex; position: static; gap: 1rem; padding: 0; }
+  .burger { display: none; }
+}
+
+/* ===== Burgarknapp – liten X-animation när öppen (valfritt) ===== */
+.burger.is-open { outline: 2px solid color-mix(in hsl, var(--brand) 35%, transparent); }
