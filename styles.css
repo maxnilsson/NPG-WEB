@@ -63,12 +63,6 @@ img,svg,picture{display:block;max-width:100%}
 .burger{display:inline-flex;width:40px;height:40px;border-radius:12px;align-items:center;justify-content:center;cursor:pointer;border:1px solid var(--border);background:var(--bg-elev)}
 @media(min-width:900px){.menu{display:flex}.burger{display:none}}
 
-/* Hero */
-.hero {
-  position: relative;
-  padding-top: clamp(1rem, 4vw, 3rem);
-  background: url('fastighet.jpg') center/cover no-repeat fixed;
-}
 .hero-wrap{display:grid;gap:2rem;align-items:center;grid-template-columns:1fr}
 .hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-.02em}
 .hero p{color:var(--muted);font-size:clamp(1rem,1.6vw,1.125rem);margin-top:.9rem}
