@@ -542,3 +542,63 @@ footer .container {
     height: 3.5px;
   }
 }
+/* --- Bas för burgaren --- */
+.burger {
+  display: flex;               /* syns på mobil */
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; /* tar bort beige highlight i iOS Safari */
+}
+
+.burger:focus {
+  outline: none;               /* tar bort blå outline */
+  box-shadow: none;            /* säkerhetsbälte mot vissa browsers */
+}
+
+/* De tre strecken */
+.burger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--text, #2b2b2b);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Gör X när öppen */
+.burger.is-open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.is-open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- Större på små mobiler --- */
+@media (max-width: 600px) {
+  .burger {
+    width: 56px;
+    height: 56px;
+    gap: 7px;
+  }
+  .burger span {
+    width: 32px;
+    height: 3.5px;
+  }
+}
+
+/* --- Dölj helt på desktop --- */
+@media (min-width: 900px) {
+  .burger {
+    display: none;
+  }
+}
