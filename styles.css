@@ -895,3 +895,50 @@ footer .container {
 @media (min-width: 900px) {
   .burger { display: none !important; }
 }
+
+/* --- BURGER: mobil (<900px) med exakt centrerat X --- */
+@media (max-width: 900px) {
+  .burger {
+    position: relative;
+    display: flex !important;
+    width: 64px;               /* justera vid behov */
+    height: 64px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  /* Alla tre streck utgår från MITTEN */
+  .burger span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;               /* längd på strecken */
+    height: 4px;               /* tjocklek */
+    background: #007BFF;       /* blå färg */
+    border-radius: 2px;
+    transform-origin: 50% 50%; /* rotera kring mitten */
+    transition: transform .25s ease, opacity .2s ease;
+    transform: translate(-50%, -50%); /* start i mitten */
+  }
+
+  /* Stängd läge: flytta första upp och tredje ner lika mycket */
+  .burger { --offset: 10px; }  /* avstånd från mitten, justerbar */
+  .burger span:nth-child(1) { transform: translate(-50%, calc(-50% - var(--offset))); }
+  .burger span:nth-child(2)) { transform: translate(-50%, -50%); }
+  .burger span:nth-child(3) { transform: translate(-50%, calc(-50% + var(--offset))); }
+
+  /* Öppnad: båda strecken möts exakt i mitten och roteras */
+  .burger.is-open span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+  .burger.is-open span:nth-child(2) { opacity: 0; }
+  .burger.is-open span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
+}
+
+/* Dölj på desktop */
+@media (min-width: 900px) {
+  .burger { display: none !important; }
+}
